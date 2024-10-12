@@ -1,0 +1,13 @@
+GLUON_SITE_FEEDS='ffnh_packages community ffac'
+
+PACKAGES_FFNH_PACKAGES_REPO=https://gitlab.com/freifunk-nordhessen/ffnh-packages.git
+PACKAGES_FFNH_PACKAGES_COMMIT=e82fc03cbf17cf3d80b3842d18f9b50e02847be8
+PACKAGES_FFNH_BRANCH=main
+
+PACKAGES_COMMUNITY_REPO=https://github.com/freifunk-gluon/community-packages.git
+PACKAGES_COMMUNITY_BRANCH=master
+PACKAGES_COMMUNITY_COMMIT=61ba5ab54ffd34a77ec4967487f69848d553fcc0
+
+PACKAGES_FFAC_REPO=https://github.com/ffac/gluon-packages.git
+PACKAGES_FFAC_COMMIT=c2b980177d7e222dcadbdf0bd96f39d5e892184a
+PACKAGES_FFAC_BRANCH=main
