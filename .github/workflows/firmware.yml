@@ -52,7 +52,7 @@ jobs:
           fetch-tags: true
       - name: Install build dependencies
         run: |
-          sudo -E ./scripts/prepare_build.sh
+          sudo -E ./prepare_build.sh
       - name: build target ${{ matrix.target }}
         id: compile
         run: |
