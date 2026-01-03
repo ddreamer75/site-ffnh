@@ -2,7 +2,7 @@ features {
   'autoupdater',
   'mesh-batman-adv-15',
   'mesh-vpn-fastd-l2tp',
---  'client-bridge',
+  'client-bridge',
   'ebtables-filter-multicast',
   'ebtables-filter-ra-dhcp',
   'ebtables-source-filter',
@@ -13,6 +13,7 @@ features {
   'status-page',
   'web-admin',
   'web-wizard',
+  'harden-dropbear',
   'web-advanced',
   'web-private-wifi',
   'config-mode-geo-location-osm',
@@ -21,11 +22,14 @@ features {
 
 packages {
     'iwinfo',
+    'gluon-wan-dnsmasq',
     'gluon-autorestart',
     'respondd-module-airtime',
-    'tecff-general-workaround',
-    'tecff-broken-wlan-workaround',
+    --'tecff-general-workaround',
+    --'tecff-broken-wlan-workaround',
     'ffac-ssid-changer',
+    'ffnh-brid',
+    'ffnh-lightsout'
 }
 
 include_usb = false
@@ -48,6 +52,7 @@ if not device_class('tiny') and not tiny_like then
         'ff-web-ap-timer',
 	'htop',
 	'ffda-gluon-usteer',
+	'ffnh-wlan-scanner',
     }
     -- usb is only default available for non-tiny devices
     -- disabled usb per default, only active for special devices
