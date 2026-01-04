@@ -26,8 +26,8 @@ include release.mk
 include targets.mk
 GLUON_BUILD_DIR := gluon-build
 
-# export GLUON_SITEDIR := ..
-# PATCH_DIR := patches
+export GLUON_SITEDIR := ..
+PATCH_DIR := patches/gluon
 # SECRET_KEY_FILE ?= $(HOME)/.gluon-secret-key
 # OPKG_KEY_FOLDER ?= $(HOME)/.key-build
 
