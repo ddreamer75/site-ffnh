@@ -6,6 +6,8 @@ name: "Build Gluon images"
 on:
   pull_request:
   push:
+    tags:
+      - v*
   workflow_dispatch:
     inputs:
       repository:
