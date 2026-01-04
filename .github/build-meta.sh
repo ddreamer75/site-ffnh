@@ -86,8 +86,8 @@ SITE_VERSION="$SITE_VERSION-FFNH-$GIT_COMMIT_DATE-$GIT_SHORT_HASH"
 
 # Enable Manifest generation conditionally
 MANIFEST_STABLE="0"
-MANIFEST_BETA="0"
-MANIFEST_TESTING="0"
+MANIFEST_EXPERIMENTAL="0"
+# MANIFEST_TESTING="0"
 
 # Only Sign manifest on release builds
 SIGN_MANIFEST="0"
@@ -100,7 +100,7 @@ if [ "$GITHUB_EVENT_NAME" = "push"  ] && [ "$GITHUB_REF_TYPE" = "branch" ]; then
 	if [ "$GITHUB_REF_NAME" = "master" ]; then
 		# Push to master - autoupdater Branch is testing and enabled
 		AUTOUPDATER_ENABLED="1"
-		AUTOUPDATER_BRANCH="testing"
+		AUTOUPDATER_BRANCH="experimental"
 
 		MANIFEST_TESTING="1"
 	elif [[ "$GITHUB_REF_NAME" =~ $RELEASE_BRANCH_RE ]]; then
@@ -113,13 +113,13 @@ if [ "$GITHUB_EVENT_NAME" = "push"  ] && [ "$GITHUB_REF_TYPE" = "branch" ]; then
 	else
 		# Push to unknown branch - Disable autoupdater
 		AUTOUPDATER_ENABLED="0"
-		AUTOUPDATER_BRANCH="testing"
+		AUTOUPDATER_BRANCH="experimental"
 	fi
 elif [ "$GITHUB_EVENT_NAME" = "push"  ] && [ "$GITHUB_REF_TYPE" = "tag" ]; then
 	if [[ "$GITHUB_REF_NAME" =~ $TESTING_TAG_RE ]]; then
 		# Testing release - autoupdater Branch is testing and enabled
 		AUTOUPDATER_ENABLED="1"
-		AUTOUPDATER_BRANCH="testing"
+		AUTOUPDATER_BRANCH="experimental"
 
 		MANIFEST_TESTING="1"
 		SIGN_MANIFEST="1"
@@ -133,7 +133,7 @@ elif [ "$GITHUB_EVENT_NAME" = "push"  ] && [ "$GITHUB_REF_TYPE" = "tag" ]; then
 		AUTOUPDATER_BRANCH="stable"
 
 		MANIFEST_STABLE="1"
-		MANIFEST_BETA="1"
+		# MANIFEST_BETA="1"
 		SIGN_MANIFEST="1"
 
 		LATEST_RELEASE="1"
@@ -153,7 +153,7 @@ elif [ "$GITHUB_EVENT_NAME" = "push"  ] && [ "$GITHUB_REF_TYPE" = "tag" ]; then
 	else
 		# Unknown release - Disable autoupdater
 		AUTOUPDATER_ENABLED="0"
-		AUTOUPDATER_BRANCH="testing"
+		AUTOUPDATER_BRANCH="experimental"
 
 		if [[ "$GITHUB_REF_NAME" =~ $CUSTOM_TESTING_TAG_RE ]]; then
 			# Custom testing tag
@@ -168,7 +168,7 @@ elif [ "$GITHUB_EVENT_NAME" = "push"  ] && [ "$GITHUB_REF_TYPE" = "tag" ]; then
 elif [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
 	# Workflow Dispatch - autoupdater Branch is testing and disabled
 	AUTOUPDATER_ENABLED="0"
-	AUTOUPDATER_BRANCH="testing"
+	AUTOUPDATER_BRANCH="experimental"
 else
 	echo "Unknown ref type $GITHUB_REF_TYPE"
 	exit 1
@@ -216,8 +216,8 @@ set_output_value "$BUILD_META_OUTPUT" "autoupdater-enabled" "$AUTOUPDATER_ENABLE
 set_output_value "$BUILD_META_OUTPUT" "autoupdater-branch" "$AUTOUPDATER_BRANCH"
 set_output_value "$BUILD_META_OUTPUT" "broken" "$BROKEN"
 set_output_value "$BUILD_META_OUTPUT" "manifest-stable" "$MANIFEST_STABLE"
-set_output_value "$BUILD_META_OUTPUT" "manifest-beta" "$MANIFEST_BETA"
-set_output_value "$BUILD_META_OUTPUT" "manifest-testing" "$MANIFEST_TESTING"
+# set_output_value "$BUILD_META_OUTPUT" "manifest-beta" "$MANIFEST_BETA"
+set_output_value "$BUILD_META_OUTPUT" "manifest-testing" "$MANIFEST_EXPERIMENTAL"
 set_output_value "$BUILD_META_OUTPUT" "sign-manifest" "$SIGN_MANIFEST"
 set_output_value "$BUILD_META_OUTPUT" "deploy" "$DEPLOY"
 set_output_value "$BUILD_META_OUTPUT" "link-release" "$LINK_RELEASE"
