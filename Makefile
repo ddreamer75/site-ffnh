@@ -161,7 +161,7 @@ ifndef GLUON_DEVICES
 	rsync -a --exclude '*/base' --exclude '*/luci' --exclude '*/packages' --exclude '*/routing' --exclude '*/telephony' $(GLUON_BUILD_DIR)/openwrt/bin/packages/ output/packages/$(PACKAGES_BRANCH)/
 endif
 
-gluon-prepare: gluon-update ffac-patch | .modules
+gluon-prepare: gluon-update | .modules
 
 PATCH_FILES = $(shell find $(PATCH_DIR)/ -type f -name '*.patch')
 ffac-patch: gluon-update
