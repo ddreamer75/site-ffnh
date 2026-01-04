@@ -183,7 +183,7 @@ ffac-patch: gluon-update
 .cmp-git-head: FORCE | ffac-patch
 	@$(GLUON_GIT) rev-parse @{0} | cmp -s '$@' || $(GLUON_GIT) rev-parse @{0} > '$@'
 
-.modules: release.mk modules .cmp-git-head $(PATCH_DIR) $(PATCH_FILES) | ffac-patch
+.modules: release.mk modules .cmp-git-head | ffac-patch
 	@echo
 	@echo Updating Gluon modules…
 	@rm -f .modules
