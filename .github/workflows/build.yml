@@ -499,15 +499,15 @@ jobs:
         # yamllint disable-line rule:line-length
       #  run: rsync -avzP -e "ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -oIdentitiesOnly=yes" "gluon-gha-data/gluon-output/output/packages/gluon-ffda-${{ needs.build-meta.outputs.release-version }}" "ffda_firmware@www3.darmstadt.freifunk.net:/srv/firmware/modules/"
 
-  link-release:
-    needs: [build, build-meta, targets, manifest, deploy]
-    runs-on: ubuntu-22.04
-    if: >
-      needs.targets.outputs.targets != '[]' &&
-      needs.build-meta.outputs.deploy != '0' &&
-      needs.build-meta.outputs.link-release != '0' &&
-      github.event_name == 'push'
-    steps:
+#  link-release:
+ #   needs: [build, build-meta, targets, manifest, deploy]
+  #  runs-on: ubuntu-22.04
+  #  if: >
+  #    needs.targets.outputs.targets != '[]' &&
+  #    needs.build-meta.outputs.deploy != '0' &&
+  #    needs.build-meta.outputs.link-release != '0' &&
+  #    github.event_name == 'push'
+  #  steps:
 #      - name: Save SSH Key for deployment
  #       run: >
   #        mkdir -p ~/.ssh &&
