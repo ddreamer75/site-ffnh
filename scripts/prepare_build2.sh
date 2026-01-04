@@ -37,4 +37,5 @@ apt-get -y --no-install-recommends install \
     rsync \
     tar \
     unzip \
-    wget
+    wget \
+    python3-pyelftools
