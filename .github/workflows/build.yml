@@ -54,20 +54,20 @@ jobs:
         ${{ steps.build-metadata.outputs.gluon-repository }}
       gluon-commit: >-
         ${{ steps.build-metadata.outputs.gluon-commit }}
-      manifest-stable: >-
-        ${{ steps.build-metadata.outputs.manifest-stable }}
-      manifest-beta: >-
-        ${{ steps.build-metadata.outputs.manifest-beta }}
-      manifest-testing: >-
-        ${{ steps.build-metadata.outputs.manifest-testing }}
-      sign-manifest: >-
-        ${{ steps.build-metadata.outputs.sign-manifest }}
+    #  manifest-stable: >-
+    #    ${{ steps.build-metadata.outputs.manifest-stable }}
+    #  manifest-beta: >-
+    #    ${{ steps.build-metadata.outputs.manifest-beta }}
+    #  manifest-testing: >-
+    #    ${{ steps.build-metadata.outputs.manifest-testing }}
+    #  sign-manifest: >-
+    #    ${{ steps.build-metadata.outputs.sign-manifest }}
       create-release: >-
         ${{ steps.build-metadata.outputs.create-release }}
       latest-release: >-
         ${{ steps.build-metadata.outputs.latest-release }}
-      deploy: >-
-        ${{ steps.build-metadata.outputs.deploy }}
+    #  deploy: >-
+    #    ${{ steps.build-metadata.outputs.deploy }}
       link-release: >-
         ${{ steps.build-metadata.outputs.link-release }}
       target-whitelist: >-
