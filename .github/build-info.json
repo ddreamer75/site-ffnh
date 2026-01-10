@@ -11,11 +11,16 @@
         "targets": [
             "ath79-generic",
             "ath79-nand",
+            "ath79-mikrotik",
+            "bcm27xx-bcm2708",    
+            "bcm27xx-bcm2709",
             "ipq40xx-generic",
+            "ipq40xx-mikrotik",
             "ipq806x-generic",
             "lantiq-xrx200",
             "lantiq-xway",
             "mediatek-filogic",
+            "mediatek-mt7622",
             "mpc85xx-p1010",
             "mpc85xx-p1020",
             "ramips-mt7620",
@@ -23,7 +28,12 @@
             "ramips-mt76x8",
             "rockchip-armv8",
             "x86-64",
-            "x86-generic"
+            "x86-generic",
+            "bcm27xx-bcm2710",
+            "bcm27xx-bcm2711",
+            "ipq40xx-chromium",
+            "qualcommax-ipq807x",
+            "mvebu-cortexa9"            
         ]
     }
 }
