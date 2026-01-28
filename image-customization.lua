@@ -44,7 +44,7 @@ tiny_like = device({
 if not device_class('tiny') and not tiny_like then
     features {
         'tls',
---	'wireless-encryption-wpa3',
+		'wireless-encryption-wpa3',
     }
     packages {
 --      'ffac-autoupdater-wifi-fallback',
