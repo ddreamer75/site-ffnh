@@ -28,7 +28,8 @@ packages {
     --'tecff-general-workaround',
     --'tecff-broken-wlan-workaround',
     'ffac-ssid-changer',
-    'ffnh-brid'
+    'ffnh-brid',
+	'ffnh-support-enable'
 }
 
 include_usb = false
@@ -281,5 +282,6 @@ end
 if target('bcm27xx') then
     packages(pkgs_hid)
 end
+
 
 
