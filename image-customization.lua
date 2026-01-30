@@ -28,8 +28,7 @@ packages {
     --'tecff-general-workaround',
     --'tecff-broken-wlan-workaround',
     'ffac-ssid-changer',
-    'ffnh-brid',
-    'ffnh-lightsout'
+    'ffnh-brid'
 }
 
 include_usb = false
@@ -50,9 +49,12 @@ if not device_class('tiny') and not tiny_like then
 --      'ffac-autoupdater-wifi-fallback',
         'ffnh-custom-banner',
         'ff-web-ap-timer',
-	'htop',
-	'ffda-gluon-usteer',
-	'ffnh-wlan-scanner',
+		'ffnh-led-maps',
+		'ffnh-led-config',
+		'ffnh-config-mode-led',
+		'htop',
+		'ffda-gluon-usteer',
+		'ffnh-wlan-scanner'
     }
     -- usb is only default available for non-tiny devices
     -- disabled usb per default, only active for special devices
@@ -131,7 +133,7 @@ pkgs_usb_net = {
 }
 
 pkgs_not_needet = {
-	'-ffda-gluon-usteer',
+	-- '-ffda-gluon-usteer',
 	'-respondd-module-airtime',
 	'-ff-web-ap-timer',
 	'-ff-ap-timer',
@@ -140,7 +142,10 @@ pkgs_not_needet = {
 	'-hostapd-common',
 	'-hostapd-mini',
 	'-tecff-general-workaround',
-	'-tecff-broken-wlan-workaround',	
+	'-tecff-broken-wlan-workaround',
+	'-ffnh-led-maps',
+	'-ffnh-led-config',
+	'-ffnh-config-mode-led'
 	}
 
 pkgs_pci = {
@@ -276,4 +281,5 @@ end
 if target('bcm27xx') then
     packages(pkgs_hid)
 end
+
 
