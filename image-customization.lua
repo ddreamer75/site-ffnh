@@ -50,11 +50,8 @@ if not device_class('tiny') and not tiny_like then
 --      'ffac-autoupdater-wifi-fallback',
         'ffnh-custom-banner',
         'ff-web-ap-timer',
-		--'ffnh-led-maps',
-		--'ffnh-led-config',
-		--'ffnh-config-mode-led',
 		'ffnh-led-control',
-		'ffnh-led-control-config-mode',
+		'ffnh-web-led-control',
 		'htop',
 		'ffda-gluon-usteer',
 		'ffnh-wlan-scanner'
@@ -284,6 +281,7 @@ end
 if target('bcm27xx') then
     packages(pkgs_hid)
 end
+
 
 
 
