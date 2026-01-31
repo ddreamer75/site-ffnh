@@ -4,7 +4,7 @@
 
 # Use OpenWRT Source commit 4f4cb52e24ddf4e931b783ea8e65ec5d5b530261 from 12-10-2024
 # Use Packages Source commit 3ab468be20c6c385ce06403bf1ff952a4de03565 from 12-10-2024
-DEFAULT_GLUON_RELEASE := next_1.5.7a_MHE
+DEFAULT_GLUON_RELEASE := next_1.5.8a_MHE_OWE
 FFNH_SITE_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 FFNH_SITE_VERSION_GIT := $(shell git -C $(FFNH_SITE_DIR) describe --tags --abbrev=0 | sed 's/-.*//')
 
