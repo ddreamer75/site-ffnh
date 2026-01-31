@@ -53,6 +53,8 @@ if not device_class('tiny') and not tiny_like then
 		--'ffnh-led-maps',
 		--'ffnh-led-config',
 		--'ffnh-config-mode-led',
+		'ffnh-led-control',
+		'ffnh-led-control-config-mode',
 		'htop',
 		'ffda-gluon-usteer',
 		'ffnh-wlan-scanner'
@@ -282,6 +284,7 @@ end
 if target('bcm27xx') then
     packages(pkgs_hid)
 end
+
 
 
 
