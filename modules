@@ -8,6 +8,6 @@ PACKAGES_COMMUNITY_REPO=https://github.com/freifunk-gluon/community-packages.git
 PACKAGES_COMMUNITY_BRANCH=main
 PACKAGES_COMMUNITY_COMMIT=0f6d8131376528f5d9ddc1f88e3ea2f679a51f04
 
-PACKAGES_FFNH_REPO=https://github.com/ddreamer75/ffnh-package.git
-PACKAGES_FFNH_COMMIT=5978a61dff0823cf71fdc90a2fc2e3442855a037
-PACKAGES_FFNH_BRANCH=master
+PACKAGES_FFNH_REPO=https://github.com/ddreamer75/ffnh_packages.git
+PACKAGES_FFNH_COMMIT=9dc4670a63df9f6f89ecec72af38b29d742dc8b3
+PACKAGES_FFNH_BRANCH=main
